@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aman Sakdasariya</title>
+    <meta name="description" content="Home of Dunks1980 projects.">
+    <link rel="icon" href="./favicon.ico">
+    <link rel="preload" href="../fonts/Montserrat/Montserrat-Regular.ttf"
+      as="font" type="font/ttf"
+      crossorigin="anonymous">
+    <script src="main.js" type="module" defer></script>
+    <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    @font-face {
+      font-family: 'Montserrat-Regular';
+      src: url('../fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+      font-display: swap;
+    }
+
+    body {
+      color: #d1d1d1;
+      background: #5b5c60;
+      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Montserrat-Regular';
+      line-height: 1.6;
+    }
+
+    :root {
+      --grad-1: #c4c4c4;
+      --grad-2: #c4c4c4;
+    }
+
+    noscript {
+      display: block;
+      padding: 20px;
+      background: #ff0000;
+      color: #fff;
+      text-align: center;
+    }
+
+    d-welcome {
+      display: block;
+      width: 100%;
+      max-width: 470px;
+      align-self: self-end;
+      justify-self: self-start;
+      margin-bottom: 1rem;
+    }
+
+    .whole-container {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      height: auto;
+      background: rgb(29, 29, 32);
+      max-height: 100vh;
+      padding: 2.5rem;
+      position: relative;
+      margin: 2rem;
+    }
+
+    :root {
+      --cX: 0vw;
+      --cY: 0vh;
+    }
+
+    .whole-container {
+      content: '';
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 960px;
+      position: fixed;
+      border: 2px solid #7c7d81;
+      border-radius: 2rem;
+      background: radial-gradient(circle 40vmax at var(--cX) var(--cY), rgb(26, 26, 29) 0%, rgb(10, 10, 10) 100%);
+      box-shadow: var(--sX) var(--sY) 50px 0px rgba(18, 18, 19, .1);
+    }
+
+
+
+    @media screen and (max-width: 1000px) {
+      .whole-container {
+        padding: 1.5rem;
+        margin: 0rem;
+        border: 0px;
+        border-radius: 0rem;
+        position: relative;
+        background: rgb(18, 18, 19);
+      }
+
+      d-welcome {
+        margin-bottom: 0rem;
+        height: 100%;
+      }
+
+      .card .front {
+        overflow-y: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        align-items: flex-start !important;
+      }
+
+      .card::-webkit-scrollbar .front::-webkit-scrollbar {
+        display: none;
+      }
+
+      .card .back {
+        overflow-y: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        align-items: flex-start !important;
+      }
+
+      .card::-webkit-scrollbar .back::-webkit-scrollbar {
+        display: none;
+      }
+
+      .face {
+        background: rgb(18, 18, 19);
+      }
+    }
+
+    .main-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      max-width: 1000px;
+      gap: 0rem 4rem;
+    }
+
+    .main-grid h2 {
+      margin-bottom: 1rem;
+    }
+
+    @media screen and (max-width: 1000px) {
+      .main-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+
+    p {
+      font-size: .9rem;
+      margin-bottom: 1rem;
+      max-width: 65ch;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+
+    header .logo svg {
+      height: 50px;
+      width: 50px;
+      margin-left: -8px;
+      transition: all .1s ease-in-out;
+      cursor: pointer;
+    }
+
+    header .logo svg .cls-1 {
+      fill: #777
+    }
+
+    header .logo svg .cls-2 {
+      fill: #eee
+    }
+
+    header ul {
+      list-style: none;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 50px
+    }
+
+    header ul a {
+      color: #eee;
+      margin-left: 30px;
+      line-height: 1.5;
+      display: flex;
+    }
+
+    header ul a svg {
+      width: 25px;
+      height: 25px;
+      margin-top: -15px;
+      transition: transform .2s ease-in-out;
+      transform: scale(1.01);
+    }
+
+    header ul .email svg {
+      fill: #eee;
+      transition: all .1s ease-in-out;
+    }
+
+    header ul .email svg:hover {
+      transform: scale(1.2);
+    }
+
+    header ul .github svg .cls-1 {
+      fill: #eee;
+    }
+
+    header ul .github svg:hover {
+      transform: scale(1.2);
+    }
+
+    header ul .npm svg #Selection1 {
+      fill: #eee;
+    }
+
+    header ul .npm svg #Selection2 {
+      fill: #0000;
+    }
+
+    header ul .npm svg:hover {
+      transform: scale(1.2);
+    }
+
+    footer {
+      text-align: right;
+      margin-top: 3rem;
+    }
+
+    @media screen and (max-width: 1000px) {
+      footer {
+        text-align: left;
+        padding-bottom: 3rem;
+      }
+    }
+
+    .top-left-svg {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      z-index: -1;
+      border-top-left-radius: 30px;
+    }
+
+    .bottom-right-svg {
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      z-index: -1;
+    }
+
+    @media screen and (max-width: 1000px) {
+
+      .top-left-svg,
+      .bottom-right-svg {
+        display: none;
+      }
+    }
+
+    @media screen and (max-height: 550px) {
+
+      .top-left-svg,
+      .bottom-right-svg {
+        display: none;
+      }
+    }
+
+    .welcome {
+      stop-color: hsl(0, 0%, 100%);
+    }
+    .NewsApp {
+      stop-color: hsla(0, 70%, 55%, 0.5);
+    }
+    
+    .TextUtils {
+      stop-color: hsla(240, 70%, 55%, 0.5);
+    }
+    
+    .Get-in-touch{
+      stop-color: hsla(118, 70%, 55%, 0.5);
+    }
+    .cookiemunch {
+      stop-color: hsla(120, 60%, 50%, 0.5);
+    }
+
+    .screentimeconverter {
+      stop-color: hsla(60, 70%, 60%, 0.5);
+    }
+
+    .inlinesvg {
+      stop-color: hsla(300, 60%, 55%, 0.5);
+    }
+
+    .main-projects {
+      padding: 0rem 3rem;
+    }
+
+    @media screen and (max-width: 1000px) {
+      .main-projects {
+        padding: 0rem 0rem;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .logo img {
+        width: 60px;
+      }
+
+      header {
+        margin-bottom: 20px;
+      }
+    }
+
+    .project-wrapper {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    a {
+      display: block;
+      color: #ccc;
+      margin-bottom: .5rem;
+    }
+
+    .card-container {
+      perspective: 2000px;
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transition: transform 1s cubic-bezier(0.34, 1.56, .61, 1);
+      transform-style: preserve-3d;
+      background: #5b5c60;
+      -moz-backface-visibility: hidden;
+    }
+
+    .card .face {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      backface-visibility: hidden;
+    }
+
+    .card .front {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      -moz-backface-visibility: hidden;
+    }
+
+    .card .back {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: rotateY(180deg);
+      backface-visibility: hidden;
+    }
+
+    .flip-back {
+      transform: rotateY(180deg);
+    }
+
+    .main-logo {
+      width: 15%;
+      -webkit-user-drag: none;
+      -khtml-user-drag: none;
+      -moz-user-drag: none;
+      -o-user-drag: none;
+    }
+
+    /* ----------------------------------- */
+
+    @media screen and (max-width: 1000px){
+      .container-get-in-thouch {
+            width: 619.63px !important;
+            max-width: 1000px !important;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    }
+    @media screen and (max-width: 668px){
+      .container-get-in-thouch {
+            width: 500px !important;
+            max-width: 1000px !important;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    }
+    @media screen and (max-width: 520px){
+      .container-get-in-thouch {
+            width: 425px !important;
+            max-width: 1000px !important;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    @media screen and (max-width: 445px){
+      .container-get-in-thouch {
+            width: 335px !important;
+            max-width: 1000px !important;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    @media screen and (max-width: 375px){
+      .container-get-in-thouch {
+            width: 280px !important;
+            max-width: 1000px !important;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    @media screen and (max-width: 320px){
+      .container-get-in-thouch {
+            width: auto !important;
+            max-width: 1000px !important;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .container-get-in-thouch {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #000;
+            border-radius: 3px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #444;
+        }
+        #message{
+          max-width: 100%;
+          min-width: 100%;
+          max-height: 150px;
+        }
+  </style>
+  </head>
+
+  <body>
+    <noscript>
+      This site requires JavaScript to be enabled. Please enable JavaScript in
+      your browser settings and try again.
+    </noscript>
+    <div bay-hydrate>
+      <template>
+        <div class="card-container">
+          <div class="card ${this.flip}">
+            <div class="face front">
+              <div class="whole-container">
+                <svg class="top-left-svg" width="300" height="300"
+                  xmlns="http://www.w3.org/2000/svg"
+                  style="pointer-events:none">
+                  <defs>
+                    <lineargradient id="grad1front" x1="0%" y1="0%" x2="100%"
+                      y2="100%">
+                      <stop offset="0" class="${this.frontProject}"></stop>
+                      <stop offset=".5" class="${this.frontProject}"></stop>
+                      <stop offset="1" class="${this.frontProject}"></stop>
+                    </lineargradient>
+                  </defs>
+                  <path fill="url('#grad1front')"
+                    d="M8 0h292l-20 20H25a5 5 0 0 0-5 5v255L0 300V8a8 8 0 0 1 8-8Z">
+                  </path>
+                </svg>
+                <header></header>
+                <div class="main-wrap">
+                  <div class="main-grid">
+                    <div>
+                      <switch this="this.frontProject">
+                        <case this="'welcome'" break>
+                          <welcome></welcome>
+                        </case>
+                        <case this="'NewsApp'" break>
+                          <newsapp></newsapp>
+                        </case>
+                        <case this="'TextUtils'" break>
+                          <textutils></textutils>
+                        </case>
+                        <case this="'Get-in-touch'" break>
+                          <get-in-touch></get-in-touch>
+                        </case>
+                        <!-- <case this="'cookiemunch'" break>
+                        <Cookiemunch></Cookiemunch>
+                      </case>
+                      <case this="'screentimeconverter'" break>
+                        <Screentimeconverter></Screentimeconverter>
+                      </case>
+                      <case this="'inlinesvg'" break>
+                        <Inlinesvg></Inlinesvg>
+                      </case> -->
+                      </switch>
+                    </div>
+                    <div>
+                      <projects></projects>
+                    </div>
+                  </div>
+                </div>
+                <footer></footer>
+                <!-- <svg class="bottom-right-svg" width="300" height="300" xmlns="http://www.w3.org/2000/svg"
+                style="pointer-events:none">
+                <defs>
+                  <linearGradient id="grad2front" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" class="${this.frontProject}"></stop>
+                    <stop offset=".5" class="${this.frontProject}"></stop>
+                    <stop offset="1" class="${this.frontProject}"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill="url('#grad2front')" d="M292 300H0l20-20h255a5 5 0 0 0 5-5V20l20-20v292a8 8 0 0 1-8 8Z">
+                </path>
+              </svg> -->
+              </div>
+            </div>
+            <div class="face back">
+              <div class="whole-container">
+                <svg class="top-left-svg" width="300" height="300"
+                  xmlns="http://www.w3.org/2000/svg"
+                  style="pointer-events:none">
+                  <defs>
+                    <lineargradient id="grad1back" x1="0%" y1="0%" x2="100%"
+                      y2="100%">
+                      <stop offset="0" class="${this.backProject}"></stop>
+                      <stop offset=".5" class="${this.backProject}"></stop>
+                      <stop offset="1" class="${this.backProject}"></stop>
+                    </lineargradient>
+                  </defs>
+                  <path fill="url('#grad1back')"
+                    d="M8 0h292l-20 20H25a5 5 0 0 0-5 5v255L0 300V8a8 8 0 0 1 8-8Z"></path>
+                </svg>
+                <header></header>
+                <div class="main-wrap">
+                  <div class="main-grid">
+                    <div>
+                      <switch this="this.backProject">
+                        <case this="'welcome'" break>
+                          <welcome></welcome>
+                        </case>
+                        <case this="'NewsApp'" break>
+                          <newsapp></newsapp>
+                        </case>
+                        <case this="'TextUtils'" break>
+                          <textutils></textutils>
+                        </case>
+                        <case this="'Get-in-touch'" break>
+                          <get-in-touch></get-in-touch>
+                        </case>
+                        <!-- <case this="'cookiemunch'" break>
+                        <Cookiemunch></Cookiemunch>
+                      </case>
+                      <case this="'screentimeconverter'" break>
+                        <Screentimeconverter></Screentimeconverter>
+                      </case>
+                      <case this="'inlinesvg'" break>
+                        <Inlinesvg></Inlinesvg>
+                      </case> -->
+                      </switch>
+                    </div>
+
+                    <div>
+                      <projects></projects>
+                    </div>
+                  </div>
+                </div>
+                <footer></footer>
+                <!-- <svg class="bottom-right-svg" width="300" height="300" xmlns="http://www.w3.org/2000/svg"
+                style="pointer-events:none">
+                <defs>
+                  <linearGradient id="grad2back" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" class="${this.backProject}"></stop>
+                    <stop offset=".5" class="${this.backProject}"></stop>
+                    <stop offset="1" class="${this.backProject}"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill="url('#grad2back')" d="M292 300H0l20-20h255a5 5 0 0 0 5-5V20l20-20v292a8 8 0 0 1-8 8Z">
+                </path>
+              </svg> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <define this="Header">
+          <header>
+            <div :click="this.setProject('welcome')" class="logo">
+              <img class="main-logo" src="/components/Aman.png" id="Layer_1"
+                data-name="Layer 1" style="cursor: pointer;">
+              <!-- <span style="font-family: 'Times New Roman', Times, serif; font-size: 50px; position: relative; top: 50%;" >man Sakdasariya</span> -->
+
+            </div>
+            <div>
+              <ul>
+                <li class="email"> <a aria-label="email"
+                    href="mailto:amansakdasariya@gmail.com?subject=Through Your Portfolio&body=Hello there👋"><svg
+                      version="1.0" xmlns="http://www.w3.org/2000/svg"
+                      width="857.333" height="620" viewBox="0 0 643 465">
+                      <path
+                        d="M39 3.4C31.6 5.1 27.5 7 21.4 11.6 11.2 19.3 5 29.2 3 41.1c-.8 4.5-1 61.4-.8 195.9.3 185.8.3 189.6 2.3 195 4.5 12.6 15.8 24.2 28.2 29.1 5 1.9 8.2 2.3 23.1 2.7l17.2.4V292.6c0-94.4.3-171.6.6-171.6.4 0 56.5 39.8 124.6 88.5l124 88.6 123.6-88.3c67.9-48.6 123.9-88.5 124.4-88.6.4-.2.8 76.8.8 171.2V464h15.3c16.2 0 21.9-1 30.3-5.1 11.3-5.6 21.7-19.2 24.3-31.7.8-3.8 1.1-59.8 1.1-194.5 0-166.8-.2-190-1.5-195.2-4.7-17.7-19.3-31.2-37.6-34.6-5.4-1-7-.9-9.2.2-1.4.8-62.9 44.7-136.6 97.6-73.7 53-134.5 96.3-135 96.3-.6 0-60.8-42.8-133.8-95.2C115.2 49.4 54 5.6 52.1 4.3c-3.8-2.6-5.2-2.7-13.1-.9z">
+                      </path>
+                    </svg></a> </li>
+                <li class="github"> <a aria-label="github"
+                    href="https://github.com/Aman-Sakdasariya/"
+                    target="_blank"><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 120.78 117.79">
+                      <g id="Layer_2" data-name="Layer 2">
+                        <g id="Layer_1-2" data-name="Layer 1">
+                          <path class="cls-1"
+                            d="M60.39 0A60.39 60.39 0 0 0 41.3 117.69c3 .56 4.12-1.31 4.12-2.91 0-1.44-.05-6.19-.08-11.24C28.54 107.19 25 96.42 25 96.42c-2.75-7-6.71-8.84-6.71-8.84-5.48-3.75.41-3.67.41-3.67 6.07.43 9.26 6.22 9.26 6.22 5.39 9.23 14.13 6.57 17.57 5 .55-3.9 2.11-6.56 3.84-8.07C36 85.55 21.85 80.37 21.85 57.23A23.35 23.35 0 0 1 28.08 41c-.63-1.52-2.7-7.66.58-16 0 0 5.07-1.62 16.61 6.19a57.36 57.36 0 0 1 30.25 0C87 23.42 92.11 25 92.11 25c3.28 8.32 1.22 14.46.59 16a23.34 23.34 0 0 1 6.21 16.21c0 23.2-14.12 28.3-27.57 29.8 2.16 1.87 4.09 5.55 4.09 11.18 0 8.08-.06 14.59-.06 16.57 0 1.61 1.08 3.49 4.14 2.9A60.39 60.39 0 0 0 60.39 0Z">
+                          </path>
+                          <path class="cls-2"
+                            d="M22.87 86.7c-.13.3-.6.39-1 .19s-.69-.61-.55-.91.61-.39 1-.19.69.61.54.91ZM25.32 89.43c-.29.27-.85.14-1.24-.28a.92.92 0 0 1-.17-1.25c.3-.27.84-.14 1.24.28s.47 1 .17 1.25ZM27.7 92.91c-.37.26-1 0-1.35-.52s-.37-1.18 0-1.44 1 0 1.35.51.37 1.19 0 1.45ZM31 96.27a1.13 1.13 0 0 1-1.59-.27c-.53-.49-.68-1.18-.34-1.54s1-.27 1.56.23.68 1.18.33 1.54ZM35.46 98.22c-.15.47-.82.69-1.51.49s-1.13-.76-1-1.24.82-.7 1.51-.49 1.13.76 1 1.24ZM40.4 98.58c0 .5-.56.91-1.28.92s-1.3-.38-1.31-.88.56-.91 1.29-.92 1.3.39 1.3.88ZM45 97.8c.09.49-.41 1-1.12 1.12s-1.35-.17-1.44-.66.42-1 1.12-1.12 1.35.17 1.44.66Z">
+                          </path>
+                        </g>
+                      </g>
+                    </svg></a> </li>
+                <li class="linkedin">
+                  <a aria-label="LinkedIn" data-inlinesvg=".inlineSvgFile-3"
+                    href="https://www.linkedin.com/in/Aman-Sakdasariya"
+                    target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                      width="80" height="80" viewBox="0 0 26 26">
+                      <path fill="#fff"
+                        d="M 21.125 0 L 4.875 0 C 2.183594 0 0 2.183594 0 4.875 L 0 21.125 C 0 23.816406 2.183594 26 4.875 26 L 21.125 26 C 23.816406 26 26 23.816406 26 21.125 L 26 4.875 C 26 2.183594 23.816406 0 21.125 0 Z M 8.039063 22.070313 L 4 22.070313 L 3.976563 9.976563 L 8.015625 9.976563 Z M 5.917969 8.394531 L 5.894531 8.394531 C 4.574219 8.394531 3.722656 7.484375 3.722656 6.351563 C 3.722656 5.191406 4.601563 4.3125 5.945313 4.3125 C 7.289063 4.3125 8.113281 5.191406 8.140625 6.351563 C 8.140625 7.484375 7.285156 8.394531 5.917969 8.394531 Z M 22.042969 22.070313 L 17.96875 22.070313 L 17.96875 15.5 C 17.96875 13.910156 17.546875 12.828125 16.125 12.828125 C 15.039063 12.828125 14.453125 13.558594 14.171875 14.265625 C 14.066406 14.519531 14.039063 14.867188 14.039063 15.222656 L 14.039063 22.070313 L 9.945313 22.070313 L 9.921875 9.976563 L 14.015625 9.976563 L 14.039063 11.683594 C 14.5625 10.875 15.433594 9.730469 17.519531 9.730469 C 20.105469 9.730469 22.039063 11.417969 22.039063 15.046875 L 22.039063 22.070313 Z">
+                      </path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </header>
+        </define>
+        <define this="Footer">
+          <footer>© ${new Date().getFullYear()} Aman Sakdasariya</footer>
+        </define>
+        <define this="projects">
+          <div class="main-projects">
+            <h2>Check This...</h2>
+            <div class="project-wrapper">
+              <a rel="noopener" target="_blank"
+                :click.prevent="this.setProject('NewsApp')"
+                style="text-decoration: underline; cursor: pointer;">
+                <span>News WebApp</span>
+              </a>
+              <a rel="noopener" target="_blank"
+                :click.prevent="this.setProject('TextUtils')"
+                style="text-decoration: underline; cursor: pointer;">
+                <span>TextUtils</span>
+              </a>
+              <a href="https://aman-sakdasariya.wuaze.com/Resume.pdf"
+                style="text-decoration: underline; cursor: pointer;">Resume</a>
+              <a rel="noopener" target="_blank"
+                :click.prevent="this.setProject('Get-in-touch')"
+                style="text-decoration: underline; cursor: pointer;">
+                <span>Get in Touch</span>
+              </a>
+              <!-- <a rel="noopener" target="_blank" :click.prevent="this.setProject('cookiemunch')"
+            href="https://cookiemunch.Aman Sakdasariya">
+            <span>Cookiemunch</span>
+          </a>
+          <a rel="noopener" target="_blank" :click.prevent="this.setProject('screentimeconverter')"
+          href="https://screentimeconverter.com">
+          <span>Screen time converter</span>
+        </a>
+        <a rel="noopener" target="_blank" :click.prevent="this.setProject('inlinesvg')"
+        href="https://inlinesvg.Aman Sakdasariya/">
+        <span>inline.svg</span> </a> -->
+
+            </div>
+          </div>
+        </define>
+
+        <define this="Welcome">
+          <d-welcome prop-color="#cccccc">
+            <svg xmlns="http://www.w3.org/2000/svg" id="welcome"
+              width="6.30667in" height="1.27333in"
+              viewBox="0 0 1892 382"></svg>
+          </d-welcome>
+          <div>
+            <p style="text-align: justify;">My name is Aman Sakdasariya, a web
+              developer based in Bhavnagar, Gujarat,
+              India. I have experience developing user interfaces and web-based
+              solutions, having contributed to various
+              projects during my internship at Meetanshi.
+            </p>
+            <p style="text-align: justify;">I am passionate about creating
+              impactful, intuitive, and visually appealing
+              web applications using modern technologies like JavaScript,
+              React.js, HTML5, and CSS3..
+            </p>
+          </div>
+        </define>
+
+        <define this="NewsApp">
+          <h2>News WebApp</h2>
+          <p style="text-align: justify;">NewsApp is a comprehensive news
+            aggregation application that curates articles
+            from various reliable sources, delivering up-to-date information to
+            users in an intuitive and user-friendly
+            interface. Developed with modern web technologies, provides
+            real-time news updates from multiple sources with
+            features such as category filtering (Technology, Sports, Politics,
+            Entertainment, etc.).</p>
+          <p style="text-align: justify;">The app is designed for a responsive,
+            user-friendly experience on both desktop
+            and mobile devices, ensuring easy navigation and readability.</p>
+          <a target="_blank"
+            href="https://github.com/Aman-Sakdasariya/News-WebApp">
+            Github </a>
+        </define>
+
+        <define this="TextUtils">
+          <h2>TextUtils</h2>
+          <p style="text-align: justify;">TextUtils is a versatile web
+            application designed to provide various text
+            manipulation utilities. It is aimed at enhancing productivity by
+            offering tools to transform, analyze, and
+            manage text efficiently through a simple and intuitive
+            interface.</p>
+          <p style="text-align: justify;">It offers text transformation, text
+            analysis, and text formatting features. With
+            a user-friendly, responsive interface, users can easily process and
+            copy text on both desktop and mobile
+            devices.</p>
+          <a rel="noopener" target="_blank"
+            href="https://github.com/Aman-Sakdasariya/TextUtils"> Github </a>
+        </define>
+        <define this="Get-in-touch">
+          <div class="container-get-in-thouch">
+            <form method="POST" action="https://formspree.io/f/mvgpggpe">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4"
+                required></textarea>
+
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </define>
+        <!-- 
+      <define this="Cookiemunch">
+        <h2>Cookiemunch</h2>
+        <p>A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to
+          accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM
+          package and the git repository makes any type of customization to code and themes possible. </p> <a
+          target="_blank" href="https://cookiemunch.Aman Sakdasariya"> View Site </a> <a rel="noopener" target="_blank"
+          href="https://github.com/Dunks1980/Cookiemunch"> Github </a>
+        <a rel="noopener" target="_blank" href="https://www.npmjs.com/package/@dunks1980/cookiemunch"> NPM
+        </a>
+      </define>
+
+      <define this="Screentimeconverter">
+        <h2>Screen time converter</h2>
+        <p>Count the time your children spend on activities like homework, chores and exercise and convert it into
+          screen time. I created this with Vue.js and the Howlr libary to add the interactive clock sounds. It can be
+          installed as a progressive web application and is also available from the google play store. The git
+          repository for this one is private at the moment. </p><a rel="noopener" target="_blank"
+          href="https://screentimeconverter.com"> View Site </a>
+      </define>
+
+      <define this="Inlinesvg">
+        <h2>inline.svg</h2>
+        <p>This is a NPM package that takes an SVG file and renders it as a inline SVG to the DOM and can also render
+          HTML files too. You can also pass data to it that renders where its specified inside double curly braces. I
+          created this to solve problems with some frameworks and bundlers when using inline SVG files and to keep
+          code cleaner and easier to read. </p><a rel="noopener" target="_blank"
+          href="https://inlinesvg.Aman Sakdasariya/"> View Site </a> <a rel="noopener" target="_blank"
+          href="https://github.com/Dunks1980/inline.svg"> Github </a> <a rel="noopener" target="_blank"
+          href="https://www.npmjs.com/package/@dunks1980/inline.svg"> NPM </a>
+
+      </define> -->
+
+        <script data-cfasync="false"
+          src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+        <script>
+        this.flip = 'flip-front';
+        this.currentProject = 'welcome';
+        this.frontProject = 'welcome';
+        this.backProject = 'welcome';
+        this.setProject = (val) => {
+          if (this.currentProject === val) {
+            return;
+          }
+          this.currentProject = val;
+          //console.log(this.currentProject, val);
+          if (this.flip === 'flip-back') {
+            this.frontProject = val;
+            setTimeout(() => {
+              this.flip = 'flip-front';
+            }, 0);
+          } else if (this.flip === 'flip-front') {
+            this.backProject = val;
+            setTimeout(() => {
+              this.flip = 'flip-back';
+            }, 0);
+          }
+        }
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        }, false);
+      </script>
+      </template>
+    </div>
+
+    <script defer
+      src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+      integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+      data-cf-beacon='{"rayId":"8a1688425b47129a","version":"2024.6.1","r":1,"token":"7a7a078f49fe498eb3befd1b61daf0e7","serverTiming":{}}'
+      crossorigin="anonymous"></script>
+  </body>
+
+</html>
